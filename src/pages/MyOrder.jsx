@@ -1,21 +1,20 @@
-import Layout from "../components/Layout";
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { Context } from "../Utilities/Context";
-import { ChevronLeftIcon } from "@heroicons/react/24/solid";
+import { Context } from '../Utilities/Context';
+import { ChevronLeftIcon } from '@heroicons/react/24/solid';
 
 export default function MyOrder() {
   const { checkout } = React.useContext(Context);
 
   const currentPath = window.location.pathname;
-  let index = currentPath.substring(currentPath.lastIndexOf("/") + 1);
-  if (index === "last") index = checkout.length - 1;
+  let index = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+  if (index === 'last') index = checkout.length - 1;
   console.log(index);
 
   return (
-    <Layout>
-      <Link to={"/MyOrders"} className="absolute left-80">
+    <article className="grid place-content-center w-full h-screen">
+      <Link to={'/MyOrders'} className="absolute left-80">
         <ChevronLeftIcon className="h-6 w-6 text-black cursor-pointer" />
       </Link>
       <h1> Myorder</h1>
@@ -41,6 +40,6 @@ export default function MyOrder() {
           </div>
         ))}
       </div>
-    </Layout>
+    </article>
   );
 }

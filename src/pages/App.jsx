@@ -1,47 +1,67 @@
-import { useRoutes, BrowserRouter } from "react-router-dom";
-import Home from "./Home";
-import MyOrder from "./MyOrder";
-import MyOrders from "./MyOrders";
-import MyAccount from "./MyAccount";
-import NotFound from "./NotFound";
-import SignIn from "./SignIn";
-import Navbar from "../components/Navbar";
-import ShoppContext from "../Utilities/Context";
+import { useRoutes, BrowserRouter } from 'react-router-dom';
+import Home from './Home';
+import MyOrder from './MyOrder';
+import MyOrders from './MyOrders';
+import MyAccount from './MyAccount';
+import NotFound from './NotFound';
+import SignIn from './SignIn';
+import Navbar from '../components/Navbar';
+import ShoppContext from '../Utilities/Context';
+import Clothes from './Clothes';
+import Electronics from './Electronics';
+import Miscellaneous from './Miscellaneous';
+import Shoes from './Shoes';
 
 function AppRoutes() {
   let routes = useRoutes([
     {
-      path: "/",
-      element: <Home />,
+      path: '/',
+      element: <Home />
     },
     {
-      path: "/MyOrder/last",
-      element: <MyOrder />,
+      path: '/MyOrder/last',
+      element: <MyOrder />
     },
     {
-      path: "/MyOrder/:id",
-      element: <MyOrder />,
+      path: '/MyOrder/:id',
+      element: <MyOrder />
     },
     {
-      path: "/MyAccount",
-      element: <MyAccount />,
+      path: '/MyAccount',
+      element: <MyAccount />
     },
     {
-      path: "/MyOrders",
-      element: <MyOrders />,
+      path: '/MyOrders',
+      element: <MyOrders />
     },
     {
-      path: "/MyOrders/last",
-      element: <MyOrders />,
+      path: '/MyOrders/last',
+      element: <MyOrders />
     },
     {
-      path: "SignIn",
-      element: <SignIn />,
+      path: 'SignIn',
+      element: <SignIn />
     },
     {
-      path: "*",
-      element: <NotFound />,
+      path: 'clothes',
+      element: <Clothes />
     },
+    {
+      path: 'electronics',
+      element: <Electronics />
+    },
+    {
+      path: 'miscellaneous',
+      element: <Miscellaneous />
+    },
+    {
+      path: 'shoes',
+      element: <Shoes />
+    },
+    {
+      path: '*',
+      element: <NotFound />
+    }
   ]);
   return routes;
 }

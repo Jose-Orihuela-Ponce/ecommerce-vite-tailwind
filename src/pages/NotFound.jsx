@@ -1,5 +1,7 @@
-import Layout from "../components/Layout";
-
 export default function NotFound() {
-  return <Layout>NotFound</Layout>;
+  return (
+    <article className="grid place-content-center w-full h-screen">
+      NotFound
+    </article>
+  );
 }

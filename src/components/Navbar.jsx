@@ -1,14 +1,14 @@
-import NavItem from "./NavItem";
-import React from "react";
-import { Context } from "../Utilities/Context";
-import { ShoppingBagIcon } from "@heroicons/react/24/solid";
+import NavItem from './NavItem';
+import React from 'react';
+import { Context } from '../Utilities/Context';
+import { ShoppingBagIcon } from '@heroicons/react/24/solid';
 
 export default function Navbar() {
   const { count } = React.useContext(Context);
-  const activeStyle = "underline underline-offset-4";
+  const activeStyle = 'underline underline-offset-4';
 
   return (
-    <nav className="flex justify-between items-center top-0 fixed z-10 w-full py-5 px-8 text-sm font-light">
+    <nav className="flex justify-between items-center top-0 fixed z-10 w-full py-5 px-8 text-sm font-light bg-white border-b-[1px] border-gray-500">
       <ul className="flex items-center gap-3">
         <li className="font-semibold text-lg">
           <NavItem to="/">Shop</NavItem>
@@ -29,13 +29,13 @@ export default function Navbar() {
           </NavItem>
         </li>
         <li>
-          <NavItem activeStyle={activeStyle} to="/furnitures">
-            Furnitures
+          <NavItem activeStyle={activeStyle} to="/miscellaneous">
+            Miscellaneous
           </NavItem>
         </li>
         <li>
-          <NavItem activeStyle={activeStyle} to="/toys">
-            Toys
+          <NavItem activeStyle={activeStyle} to="/shoes">
+            Shoes
           </NavItem>
         </li>
         <li>

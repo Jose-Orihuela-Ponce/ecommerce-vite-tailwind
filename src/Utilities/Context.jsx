@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Context = React.createContext();
 
@@ -41,7 +41,7 @@ export default function ShoppContext({ children }) {
         setTotalPrice,
         totalPrices,
         checkout,
-        setCheckout,
+        setCheckout
       }}
     >
       {children}
@@ -50,5 +50,5 @@ export default function ShoppContext({ children }) {
 }
 
 ShoppContext.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
