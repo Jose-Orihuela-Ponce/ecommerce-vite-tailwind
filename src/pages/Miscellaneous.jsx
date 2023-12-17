@@ -1,8 +1,9 @@
 import Layout from '../components/Layout';
-import useGetData from '../Utilities/useGetData';
+import React from 'react';
+import { Context } from '../Utilities/Context';
 
 export default function Miscellaneous() {
-  const productList = useGetData();
+  const { productList } = React.useContext(Context);
   const miscellaneous = productList.filter(
     (el) => el.category.name == 'Miscellaneous'
   );

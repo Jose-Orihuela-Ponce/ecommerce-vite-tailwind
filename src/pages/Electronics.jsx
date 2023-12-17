@@ -1,8 +1,9 @@
 import Layout from '../components/Layout';
-import useGetData from '../Utilities/useGetData';
+import React from 'react';
+import { Context } from '../Utilities/Context';
 
 export default function Electronics() {
-  const productList = useGetData();
+  const { productList } = React.useContext(Context);
   const electronics = productList.filter(
     (el) => el.category.name == 'Electronics'
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import useGetData from './useGetData';
 export const Context = React.createContext();
 
 export default function ShoppContext({ children }) {
@@ -12,6 +12,7 @@ export default function ShoppContext({ children }) {
     React.useState(false);
   const [totalPrice, setTotalPrice] = React.useState(0);
   const [checkout, setCheckout] = React.useState([]);
+  const productList = useGetData();
 
   const totalPrices = (cardProducts) => {
     const suma = cardProducts.reduce((acc, el) => {
@@ -41,7 +42,8 @@ export default function ShoppContext({ children }) {
         setTotalPrice,
         totalPrices,
         checkout,
-        setCheckout
+        setCheckout,
+        productList
       }}
     >
       {children}
