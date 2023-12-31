@@ -1,4 +1,4 @@
-import { useRoutes, BrowserRouter } from 'react-router-dom';
+import { useRoutes, BrowserRouter, HashRouter } from 'react-router-dom';
 import Home from './Home';
 import MyOrder from './MyOrder';
 import MyOrders from './MyOrders';
@@ -39,23 +39,23 @@ function AppRoutes() {
       element: <MyOrders />
     },
     {
-      path: 'SignIn',
+      path: '/SignIn',
       element: <SignIn />
     },
     {
-      path: 'clothes',
+      path: '/clothes',
       element: <Clothes />
     },
     {
-      path: 'electronics',
+      path: '/electronics',
       element: <Electronics />
     },
     {
-      path: 'miscellaneous',
+      path: '/miscellaneous',
       element: <Miscellaneous />
     },
     {
-      path: 'shoes',
+      path: '/shoes',
       element: <Shoes />
     },
     {
@@ -68,10 +68,10 @@ function AppRoutes() {
 function App() {
   return (
     <ShoppContext>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <AppRoutes />
-      </BrowserRouter>
+      </HashRouter>
     </ShoppContext>
   );
 }
